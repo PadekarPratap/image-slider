@@ -17,7 +17,7 @@ export const slides = [
     },
     {
       url: 'https://images.unsplash.com/photo-1661961112951-f2bfd1f253ce?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2672&q=80',
-      moto: 'New Tech AI Sloutions',
+      moto: 'New Tech AI Solutions',
       para: 'Automate your business and increase efficiency using the power of AI!'
     },
 
