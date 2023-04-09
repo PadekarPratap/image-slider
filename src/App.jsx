@@ -31,6 +31,7 @@ export default function App() {
     };
   }, [currentIndex]);
 
+
   return (
     <div className="group max-w-[1400px] h-[700px] mx-auto mt-[2rem] md:mt-[5rem] px-4 relative">
       <AnimatePresence mode="wait">
@@ -62,7 +63,7 @@ export default function App() {
           size={30}
           className="text-white bg-black/50 rounded-full p-1 cursor-pointer"
           onClick={prevSlide}
-        />
+          />
       </div>
 
       {/* right arrow */}
@@ -82,6 +83,7 @@ export default function App() {
               <BsFillCircleFill
                 size={11}
                 onClick={() => setCurrentIndex(slideIndex)}
+                className={slideIndex === currentIndex ? "bg-blue-600 p-[0.35rem] rounded-full" : null}
               />
             </div>
           );
@@ -89,6 +91,7 @@ export default function App() {
       </div>
     </div>
 
-    // this project has been created in association with Code Commerce
+    // this project has been created in association with Code Commerce 
+
   );
 }
