@@ -14,24 +14,20 @@ export default function App() {
   }
 
   const nextSlide = () =>{
-    const isLastSlide = currentIndex === slides.length - 1
-    const index = isLastSlide ? 0 : currentIndex + 1
-    setCurrentIndex(index)
+    setCurrentIndex((prevState) => {
+      const isLastSlide = prevState === slides.length - 1;
+      return isLastSlide ? 0 : prevState + 1;
+    });
   }
 
   // automatic slideshow every 5 seconds
-  useEffect(() =>{
-    const timer = setInterval(() => {
-      if(currentIndex < slides.length - 1){
-        setCurrentIndex(currentIndex + 1)
-      }else if(currentIndex === slides.length - 1){
-        setCurrentIndex(0)
-      }
-    }, 5000);
-    return () =>{
-      clearInterval(timer)
-    }
-  }, [currentIndex])
+  useEffect(() => {
+    const automatic = setInterval(() => {
+      nextSlide();
+    }, 2000);
+
+    return () => clearInterval(automatic);
+  }, []);
 
   return (
     <div className='group max-w-[1400px] h-[700px] mx-auto mt-[2rem] md:mt-[5rem] px-4 relative'>
@@ -61,7 +57,7 @@ export default function App() {
         {
           slides.map((slide, slideIndex) => {
             return (
-              <div className='cursor-pointer'><BsFillCircleFill size={11} onClick={() => setCurrentIndex(slideIndex)} /></div>
+              <div key={slide.id} className='cursor-pointer'><BsFillCircleFill size={11} onClick={() => setCurrentIndex(slideIndex)} /></div>
             )
           })
         }
