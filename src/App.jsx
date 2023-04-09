@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import {slides} from './slides'
 import {MdKeyboardArrowLeft, MdKeyboardArrowRight} from 'react-icons/md'
 import {BsFillCircleFill} from 'react-icons/bs'
@@ -19,6 +19,7 @@ export default function App() {
     setCurrentIndex(index)
   }
 
+   
   return (
     <div className='group max-w-[1400px] h-[700px] mx-auto mt-[5rem] px-4 relative'>
       <div className='w-full h-full bg-cover bg-center rounded-xl duration-500' style={{backgroundImage: `url(${slides[currentIndex].url})`}}>
