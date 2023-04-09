@@ -1,8 +1,8 @@
-import slide1 from './assets/slide-1.avif'
-import slide2 from './assets/slide-2.avif'
-import slide3 from './assets/slide-3.avif'
-import slide4 from './assets/slide-4.avif'
-import slide5 from './assets/slide-5.avif'
+import slide1 from './assets/slide-1.jpg'
+import slide2 from './assets/slide-2.jpg'
+import slide3 from './assets/slide-3.jpg'
+import slide4 from './assets/slide-4.jpg'
+import slide5 from './assets/slide-5.jpg'
 
 export const slides = [
     {
