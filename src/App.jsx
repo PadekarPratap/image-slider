@@ -19,12 +19,28 @@ export default function App() {
     setCurrentIndex(index)
   }
 
-   
+  // automatic slideshow every 5 seconds
+  useEffect(() =>{
+    const timer = setInterval(() => {
+      if(currentIndex < slides.length - 1){
+        setCurrentIndex(currentIndex + 1)
+      }else if(currentIndex === slides.length - 1){
+        setCurrentIndex(0)
+      }
+    }, 5000);
+    return () =>{
+      clearInterval(timer)
+    }
+  }, [currentIndex])
+
   return (
     <div className='group max-w-[1400px] h-[700px] mx-auto mt-[2rem] md:mt-[5rem] px-4 relative'>
-      <div className='w-full h-full bg-cover bg-center rounded-xl duration-500' style={{backgroundImage: `url(${slides[currentIndex].url})`}}>
+
+      {/* backgroundImage */}
+      <div className='w-full h-full bg-cover bg-center rounded-xl duration-700' style={{backgroundImage: `url(${slides[currentIndex].url})`}}>
       </div>
 
+      {/* title and tag */}
       <div className='absolute bottom-[2rem] text-white left-8 right-8 md:left-[10%] md:right-[10%]  lg:left-[20%] lg:right-[20%] text-center bg-black/50 p-4 rounded'>
         <h2 className='text-2xl md:text-4xl lg:text-5xl font-bold tracking-wider '>{slides[currentIndex].moto}</h2>
         <p className='md:text-2xl'>{slides[currentIndex].para}</p>
