@@ -29,7 +29,7 @@ export default function App() {
     return () =>{
       clearInterval(timer)
     }
-  }, [])
+  }, [currentIndex])
 
   return (
     <div className='group max-w-[1400px] h-[700px] mx-auto mt-[2rem] md:mt-[5rem] px-4 relative'>
