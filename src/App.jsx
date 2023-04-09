@@ -21,7 +21,7 @@ export default function App() {
 
    
   return (
-    <div className='group max-w-[1400px] h-[700px] mx-auto mt-[5rem] px-4 relative'>
+    <div className='group max-w-[1400px] h-[700px] mx-auto mt-[2rem] md:mt-[5rem] px-4 relative'>
       <div className='w-full h-full bg-cover bg-center rounded-xl duration-500' style={{backgroundImage: `url(${slides[currentIndex].url})`}}>
       </div>
 
