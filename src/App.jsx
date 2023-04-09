@@ -14,30 +14,28 @@ export default function App() {
   }
 
   const nextSlide = () =>{
-    const isLastSlide = currentIndex === slides.length - 1
-    const index = isLastSlide ? 0 : currentIndex + 1
-    setCurrentIndex(index)
+    // another way of writing the code of next/previous slide
+    setCurrentIndex((prevIndex) =>{
+      const isLastSlide = prevIndex === slides.length - 1
+      return isLastSlide ? 0 : prevIndex + 1
+    })
   }
 
   // automatic slideshow every 5 seconds
   useEffect(() =>{
     const timer = setInterval(() => {
-      if(currentIndex < slides.length - 1){
-        setCurrentIndex(currentIndex + 1)
-      }else if(currentIndex === slides.length - 1){
-        setCurrentIndex(0)
-      }
+     nextSlide()
     }, 5000);
     return () =>{
       clearInterval(timer)
     }
-  }, [currentIndex])
+  }, [])
 
   return (
     <div className='group max-w-[1400px] h-[700px] mx-auto mt-[2rem] md:mt-[5rem] px-4 relative'>
 
       {/* backgroundImage */}
-      <div className='w-full h-full bg-cover bg-center rounded-xl duration-500' style={{backgroundImage: `url(${slides[currentIndex].url})`}}>
+      <div className='w-full h-full bg-cover bg-center rounded-xl' style={{backgroundImage: `url(${slides[currentIndex].url})`}}>
       </div>
 
       {/* title and tag */}
