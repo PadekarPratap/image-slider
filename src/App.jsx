@@ -37,7 +37,7 @@ export default function App() {
     <div className='group max-w-[1400px] h-[700px] mx-auto mt-[2rem] md:mt-[5rem] px-4 relative'>
 
       {/* backgroundImage */}
-      <div className='w-full h-full bg-cover bg-center rounded-xl duration-700' style={{backgroundImage: `url(${slides[currentIndex].url})`}}>
+      <div className='w-full h-full bg-cover bg-center rounded-xl duration-500' style={{backgroundImage: `url(${slides[currentIndex].url})`}}>
       </div>
 
       {/* title and tag */}
