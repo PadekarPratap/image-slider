@@ -25,8 +25,8 @@ export default function App() {
       <div className='w-full h-full bg-cover bg-center rounded-xl duration-500' style={{backgroundImage: `url(${slides[currentIndex].url})`}}>
       </div>
 
-      <div className='absolute bottom-[2rem] text-white left-1/2 translate-x-[-50%] text-center bg-black/50 p-4 rounded'>
-        <h2 className='text-2xl md:text-5xl font-bold tracking-wider '>{slides[currentIndex].moto}</h2>
+      <div className='absolute bottom-[2rem] text-white left-8 right-8 md:left-[10%] md:right-[10%]  lg:left-[20%] lg:right-[20%] text-center bg-black/50 p-4 rounded'>
+        <h2 className='text-2xl md:text-4xl lg:text-5xl font-bold tracking-wider '>{slides[currentIndex].moto}</h2>
         <p className='md:text-2xl'>{slides[currentIndex].para}</p>
       </div>
 
