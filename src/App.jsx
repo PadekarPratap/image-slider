@@ -59,7 +59,7 @@ export default function App() {
         {
           slides.map((slide, slideIndex) => {
             return (
-              <div className='cursor-pointer'><BsFillCircleFill size={11} onClick={() => setCurrentIndex(slideIndex)} /></div>
+              <div className='cursor-pointer' key={slide.moto} ><BsFillCircleFill size={11} onClick={() => setCurrentIndex(slideIndex)} /></div>
             )
           })
         }
